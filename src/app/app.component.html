@@ -1,0 +1,101 @@
+<!--&lt;!&ndash;<app-header></app-header>&ndash;&gt;-->
+<!--<router-outlet>-->
+<!--  <app-home></app-home>-->
+<!--</router-outlet>-->
+<!--<ng-sidebar-container>-->
+<!--  <ng-sidebar [opened]="opened">-->
+<!--    <p>Page content</p>-->
+<!--  </ng-sidebar>-->
+<!--  <div style="height: 100%" ng-sidebar-content>-->
+<!--    <button>click me</button>-->
+<!--  </div>-->
+<!--</ng-sidebar-container>-->
+<!--&lt;!&ndash;<app-footer></app-footer>&ndash;&gt;-->
+
+<!--<app-header></app-header>-->
+<mat-sidenav-container style="height: 600px;">
+  <mat-sidenav style="width: 75px;" *ngIf="!utils.opened" mode="side" [opened] = "!utils.opened">
+    <div (click)="goHome()">
+      <img src="../assets/icons/home.svg">
+    </div><br/>
+    <div (click)="goUsersList()">
+      <img src="../assets/icons/people-sharp.svg">
+    </div><br/>
+    <div (click)="goBooksList()">
+      <img src="../assets/icons/library.svg">
+    </div><br/>
+
+    <div (click)="goToHelpDesk()">
+      <img src="../assets/icons/mail.svg">
+    </div><br/>
+
+    <div (click)="goToReviews()">
+      <img src="../assets/icons/grid.svg">
+    </div><br/>
+
+    <div (click)="goToReports()">
+      <img src="../assets/icons/list-sharp.svg">
+    </div><br/>
+
+    <div (click)="goToProfile()">
+      <img src="../assets/icons/person-sharp.svg">
+    </div><br/>
+
+    <div (click)="logOut()">
+      <img src="../assets/icons/log-out.svg">
+    </div><br/>
+
+    <div style="padding-top: 100px" (click)="utils.opened = !utils.opened">
+      <img src="../assets/icons/arrow-forward-circle-sharp.svg">
+    </div>
+  </mat-sidenav>
+  <mat-sidenav *ngIf="utils.opened" mode="side" [opened] = "utils.opened">
+    <div (click)="goHome()">
+      <img src="../assets/icons/home.svg">
+      Home
+    </div><br/>
+    <div (click)="goUsersList()">
+      <img src="../assets/icons/people-sharp.svg">
+      Users
+    </div><br/>
+    <div (click)="goBooksList()">
+      <img src="../assets/icons/library.svg">
+      Books
+    </div><br/>
+
+    <div (click)="goToHelpDesk()">
+      <img src="../assets/icons/mail.svg">
+      Help Desk
+    </div><br/>
+
+    <div (click)="goToReviews()">
+      <img src="../assets/icons/grid.svg">
+      Reviews
+    </div><br/>
+
+    <div (click)="goToReports()">
+      <img src="../assets/icons/list-sharp.svg">
+      Reports
+    </div><br/>
+
+    <div (click)="goToProfile()">
+      <img src="../assets/icons/person-sharp.svg">
+      Profile
+    </div><br/>
+
+    <div (click)="logOut()">
+      <img src="../assets/icons/log-out.svg">
+      Logout
+    </div><br/>
+
+    <div style="padding-top: 100px" (click)="utils.opened = !utils.opened">
+      <img src="../assets/icons/arrow-back-circle-sharp.svg">
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+<!--    <button (click)="utils.opened = !utils.opened">open</button>-->
+<!--    <button (click)="utils.opened = !utils.opened">close</button>-->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

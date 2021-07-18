@@ -1,0 +1,103 @@
+<!--<div class="card" style="width: 18rem; border-radius:20px">-->
+<!--  <img style="border-top-left-radius: 20px;-->
+<!--    border-top-right-radius: 20px;" src="assets/download.jpg" class="card-img-top" alt="...">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Card title</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--  </div>-->
+<!--</div>-->
+<ion-row class="top-row">
+  <ion-col size="12">
+    <h4 style="padding: 12px 0px 0px 50px;">Home</h4>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="4">
+    <ion-card (click)="openUsers()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/people-sharp.svg">
+      </div>
+      <h1>2 Users</h1>
+    </ion-card>
+  </ion-col>
+  <ion-col size="4">
+    <ion-card (click)="openBooks()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/layers.svg">
+      </div>
+      <h1>30 Books</h1>
+    </ion-card>
+  </ion-col>
+  <ion-col size="4">
+    <ion-card (click)="openHelpDesk()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/mail.svg">
+      </div>
+      <h1>Help Desk</h1>
+    </ion-card>
+  </ion-col>
+
+  <ion-col size="4">
+    <ion-card (click)="openReviews()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/newspaper.svg">
+      </div>
+      <h1>Reviews</h1>
+    </ion-card>
+  </ion-col>
+  <ion-col size="4">
+    <ion-card (click)="openReports()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/albums.svg">
+      </div>
+      <h1>Reports</h1>
+    </ion-card>
+  </ion-col>
+  <ion-col size="4">
+    <ion-card (click)="openProfile()" class="card">
+      <div>
+        <img style="width: 35px" src="../assets/icons/person-sharp.svg">
+      </div>
+      <h1>Profile</h1>
+    </ion-card>
+  </ion-col>
+
+</ion-row>
+<!--<table class="table">-->
+<!--  <thead class="thead-dark">-->
+<!--  <tr>-->
+<!--    <th scope="col">Image</th>-->
+<!--    <th scope="col">Full Name</th>-->
+<!--    <th scope="col">Email</th>-->
+<!--    <th scope="col">Phone(Mobile)</th>-->
+<!--    <th scope="col">Username</th>-->
+<!--    <th scope="col">Active</th>-->
+<!--    <th scope="col">Actions</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let user of users; let i= index">-->
+<!--    <td scope="row"><img class="image" src="{{user?.profileImage}}"></td>-->
+<!--    <td class="center">{{user?.fullName}}</td>-->
+<!--    <td class="center">{{user?.email}}</td>-->
+<!--    <td class="center">{{user?.phone}}</td>-->
+<!--    <td class="center">{{user.username}}</td>-->
+<!--    <td *ngIf="user?.isActive === true" class="center">YES</td>-->
+<!--    <td *ngIf="user?.isActive === false" class="center">NO</td>-->
+<!--    <td class="center"><img style="width: 25px" src="../assets/icons/ellipsis-vertical.svg"></td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+<!--<ion-button expand="full" color="warning">Primary</ion-button>-->
+<!--<ion-row>-->
+<!--  <ion-col size="6">-->
+<!--    <ion-button expand="full" color="danger">Primary</ion-button>-->
+<!--  </ion-col>-->
+<!--  <ion-col size="6">-->
+<!--    <ion-button expand="full" color="secondary">Secondary</ion-button>-->
+<!--  </ion-col>-->
+<!--</ion-row>-->
+
+<!--<button class="button" (click)="downloadData()">Download Report</button>-->
+

@@ -1,0 +1,29 @@
+.button {
+  text-align: center;
+  width: 96%;
+  margin-right: 10px;
+  margin-left: 10px;
+  background: chartreuse;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: capitalize;
+  --box-shadow: none;
+}
+
+.image{
+  width: 75px;
+  max-width: 75px;
+  max-height: 75px;
+  border-radius: 50%;
+}
+
+.center {
+  vertical-align: inherit;
+}
+
+.top-row {
+  margin: -16px -16px 16px -16px;
+  height: 70px;
+  background: darkslategrey;
+  color: white;
+}

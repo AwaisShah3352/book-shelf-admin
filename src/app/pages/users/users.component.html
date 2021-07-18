@@ -1,0 +1,35 @@
+<ion-row class="top-row">
+  <ion-col size="12">
+    <h4 style="padding: 12px 0px 0px 50px;">Users</h4>
+  </ion-col>
+</ion-row>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Image</th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone(Mobile)</th>
+    <th scope="col">Username</th>
+    <th scope="col">Active</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; let i= index">
+    <td scope="row"><img class="image" src="{{user?.profileImage}}"></td>
+    <td class="center">{{user?.fullName}}</td>
+    <td class="center">{{user?.email}}</td>
+    <td class="center">{{user?.phone}}</td>
+    <td class="center">{{user.username}}</td>
+    <td *ngIf="user?.isActive === true" class="center">YES</td>
+    <td *ngIf="user?.isActive === false" class="center">NO</td>
+    <td class="center"><img style="width: 25px" src="../assets/icons/ellipsis-horizontal-sharp.svg"></td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="users.length === 0">
+  <div *ngFor="let i of [1,2,3,4,5]">
+    <ion-skeleton-text style="height: 50px; width: 100%"></ion-skeleton-text>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<ion-row class="top-row">
+  <ion-col size="12">
+    <h4 style="padding: 12px 0px 0px 50px;">Reviews</h4>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+    <ion-card style="border-radius: 10px" *ngFor="let review of Reviews; index as i">
+      <ion-card-header>
+        <ion-card-title>{{review?.from || 'email@gmail.com'}}</ion-card-title>
+        <ion-item style="margin: 0px 0px -15px 0px;" class="ion-no-padding" lines="none">
+          <div *ngFor="let star of [1,2,3,4,5];">
+            <img *ngIf="star <= review?.stars" style="width: 20px" src="../assets/icons/star.svg">
+            <img *ngIf="star > review?.stars" style="width: 20px" src="../assets/icons/star-outline.svg">
+          </div>
+          {{review?.stars}}
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none" class="ion-no-padding">{{review?.feedback}}</ion-item>
+        <p>{{review?.timestamp | date: 'yyyy-MM-dd'}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+    <ion-card style="border-radius: 10px">
+      <ion-card-header>
+        <ion-card-title>Total rating is:</ion-card-title>
+        <ion-item style="margin: 0px 0px -15px 0px;" class="ion-no-padding" lines="none">
+          <div *ngFor="let star of [1,2,3,4,5];">
+            <img *ngIf="star <= totalRating" style="width: 20px" src="../assets/icons/star.svg">
+            <img *ngIf="star > totalRating" style="width: 20px" src="../assets/icons/star-outline.svg">
+          </div>{{totalRating}}
+        </ion-item>
+      </ion-card-header>
+    </ion-card>
+  </ion-col>
+</ion-row>
