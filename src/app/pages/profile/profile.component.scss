@@ -4,3 +4,37 @@
   background: darkslategrey;
   color: white;
 }
+
+.profile-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid lightseagreen;
+  margin-top: 30px;
+}
+
+.outer-card {
+  margin: 30px;
+  padding: 20px;
+  box-shadow: none;
+  background: lightseagreen;
+  border-radius: 10px;
+}
+
+.inner-card{
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.name {
+  font-size: 30px;
+  font-family: inherit;
+  color: black;
+  font-weight: bold;
+}
+
+.others {
+  font-size: 20px;
+  font-family: inherit;
+  color: black;
+}

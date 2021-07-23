@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataCollectorService} from '../../services/data-collector.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-reviews',
@@ -13,12 +14,19 @@ export class ReviewsComponent implements OnInit {
   Reviews: any = [];
   allReviews: any = [];
 
-  constructor(public dataCollector: DataCollectorService) {
-    this.dataCollector.getAllReviews();
-    this.loadReviews();
+  constructor(public dataCollector: DataCollectorService,
+              public router: Router) {
   }
 
   ngOnInit(): void {
+    var isloggedIn = localStorage.getItem('isLoggedIn');
+    if(isloggedIn === 'true'){
+      this.dataCollector.getAllReviews();
+      this.loadReviews();
+    } else if(isloggedIn === null) {
+      this.router.navigate(['']);
+      alert('You are not logged in. Please login first...');
+    }
   }
 
   loadReviews(): any {

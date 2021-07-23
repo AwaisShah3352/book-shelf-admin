@@ -1,18 +1,4 @@
-<!--&lt;!&ndash;<app-header></app-header>&ndash;&gt;-->
-<!--<router-outlet>-->
-<!--  <app-home></app-home>-->
-<!--</router-outlet>-->
-<!--<ng-sidebar-container>-->
-<!--  <ng-sidebar [opened]="opened">-->
-<!--    <p>Page content</p>-->
-<!--  </ng-sidebar>-->
-<!--  <div style="height: 100%" ng-sidebar-content>-->
-<!--    <button>click me</button>-->
-<!--  </div>-->
-<!--</ng-sidebar-container>-->
-<!--&lt;!&ndash;<app-footer></app-footer>&ndash;&gt;-->
 
-<!--<app-header></app-header>-->
 <mat-sidenav-container style="height: 600px;">
   <mat-sidenav style="width: 75px;" *ngIf="!utils.opened" mode="side" [opened] = "!utils.opened">
     <div (click)="goHome()">
@@ -94,8 +80,6 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
-<!--    <button (click)="utils.opened = !utils.opened">open</button>-->
-<!--    <button (click)="utils.opened = !utils.opened">close</button>-->
   </mat-sidenav-content>
 </mat-sidenav-container>
 <app-footer></app-footer>

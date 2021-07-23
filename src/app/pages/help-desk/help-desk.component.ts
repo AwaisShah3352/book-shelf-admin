@@ -10,11 +10,18 @@ import {Router} from "@angular/router";
 export class HelpDeskComponent implements OnInit {
 
   channels: any =[];
+  user: any;
   constructor(public router: Router) {
   }
 
   ngOnInit(): void {
-    this.loadAdminChatChannels();
+    var isloggedIn = localStorage.getItem('isLoggedIn');
+    if(isloggedIn === 'true'){
+      this.loadAdminChatChannels();
+    } else if(isloggedIn === null) {
+      this.router.navigate(['']);
+      alert('You are not logged in. Please login first...');
+    }
   }
 
   loadAdminChatChannels() {

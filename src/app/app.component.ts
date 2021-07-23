@@ -68,6 +68,8 @@ export class AppComponent {
         }, {
           text: 'Ok',
           handler: () => {
+            localStorage.clear();
+            this.router.navigate([''])
           }
         }
       ]

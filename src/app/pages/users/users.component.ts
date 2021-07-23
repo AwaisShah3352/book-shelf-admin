@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataCollectorService} from '../../services/data-collector.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -10,15 +11,19 @@ export class UsersComponent implements OnInit {
   opened = false;
   data;
   users: any = [];
-  constructor(public dataCollector: DataCollectorService) {
-    this.dataCollector.getAllUsers();
-    this.loadUsers();
-    setTimeout(() => {
-      // this.loadUsers();
-    }, 5000);
+  constructor(public dataCollector: DataCollectorService,
+              public router: Router) {
   }
 
   ngOnInit(): void {
+    var isloggedIn = localStorage.getItem('isLoggedIn');
+    if(isloggedIn === 'true'){
+      this.dataCollector.getAllUsers();
+      this.loadUsers();
+    } else if(isloggedIn === null) {
+      this.router.navigate(['']);
+      alert('You are not logged in. Please login first...');
+    }
   }
 
   loadUsers(): any {

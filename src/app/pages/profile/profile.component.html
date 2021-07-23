@@ -3,4 +3,31 @@
     <h4 style="padding: 12px 0px 0px 50px;">Profile</h4>
   </ion-col>
 </ion-row>
-<p>profile works!</p>
+<div>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <img class="profile-img" src="{{user.profileImage}}"/>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+<div>
+  <ion-card class="outer-card">
+    <ion-card class="inner-card">
+      <ion-label class="name">Name: {{user.fullName}}</ion-label>
+    </ion-card>
+    <ion-card class="inner-card">
+      <ion-label class="others">Email: {{user.email}}</ion-label>
+    </ion-card>
+    <ion-card class="inner-card">
+      <ion-label class="others">Phone: {{user.phone}}</ion-label>
+    </ion-card>
+    <ion-card class="inner-card">
+      <ion-label class="others">User Name: {{user.username}}</ion-label>
+    </ion-card>
+    <ion-card class="inner-card">
+      <ion-label class="others">Password: {{user.password}}</ion-label>
+    </ion-card>
+  </ion-card>
+</div>

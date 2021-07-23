@@ -20,8 +20,14 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.channelName = localStorage.getItem('selectedChannel');
-    this.loadMessages();
+    var isloggedIn = localStorage.getItem('isLoggedIn');
+    if(isloggedIn === 'true'){
+      this.channelName = localStorage.getItem('selectedChannel');
+      this.loadMessages();
+    } else if(isloggedIn === null) {
+      this.router.navigate(['']);
+      alert('You are not logged in. Please login first...');
+    }
   }
 
   loadMessages() {

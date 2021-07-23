@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilsService} from '../../services/utils.service';
 import * as firebase from 'firebase';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import * as firebase from 'firebase';
 export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
+              public router: Router,
               private utils: UtilsService) {
   }
 
@@ -39,8 +41,19 @@ export class LoginComponent implements OnInit {
     const formData = this.loginForm.value;
     firebase.auth().signInWithEmailAndPassword(formData.email, formData.password).then(res => {
       console.log(res);
+      if (res.user.emailVerified) {
+        this.saveUser(res.user.uid);
+      } else {
+        alert('Please verify your email first.');
+      }
     }).catch(error => {
       alert(error);
     });
+  }
+
+  async saveUser(uid) {
+    localStorage.setItem('isLoggedIn', JSON.stringify(true));
+    localStorage.setItem('uid', JSON.stringify(uid));
+    this.router.navigate(['/home']);
   }
 }
