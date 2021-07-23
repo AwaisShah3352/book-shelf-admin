@@ -19,6 +19,7 @@ import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBYicFIdi9b2nJbsyIE4oL7EeYT5gOhz3c',
@@ -45,7 +46,8 @@ firebase.initializeApp(firebaseConfig);
     ReviewsComponent,
     ReportsComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    ChatComponent
   ],
   imports: [
     IonicModule.forRoot(),

@@ -4,3 +4,17 @@
   background: darkslategrey;
   color: white;
 }
+
+.image {
+  object-fit: cover;
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+}
+
+.channel-row {
+  margin: 10px;
+  background: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+}

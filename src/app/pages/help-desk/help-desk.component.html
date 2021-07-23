@@ -3,4 +3,14 @@
     <h4 style="padding: 12px 0px 0px 50px;">Help Desk</h4>
   </ion-col>
 </ion-row>
-<p>help-desk works!</p>
+<ion-content>
+<ion-row class="channel-row" *ngFor="let channel of channels">
+  <ion-col size="1">
+      <img class="image" src="{{channel.image}}"/>
+  </ion-col>
+  <ion-col (click)="openChat(channel.name)" size="11">
+    <h5>{{channel.sender}}</h5>
+    <ion-label>{{channel.email}}</ion-label>
+  </ion-col>
+</ion-row>
+</ion-content>

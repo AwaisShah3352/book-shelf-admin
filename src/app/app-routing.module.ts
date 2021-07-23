@@ -8,6 +8,7 @@ import {ProfileComponent} from './pages/profile/profile.component';
 import {ReportsComponent} from './pages/reports/reports.component';
 import {ReviewsComponent} from './pages/reviews/reviews.component';
 import {LoginComponent} from './pages/login/login.component';
+import {ChatComponent} from "./pages/chat/chat.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   },
   {
     path: '',

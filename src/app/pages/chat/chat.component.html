@@ -1,0 +1,35 @@
+<ion-row class="top-row">
+  <ion-col (click)="goBack()" size="1">
+    <img class="icon" src="../assets/icons/back.png"/>
+  </ion-col>
+  <ion-col size="11">
+    <h4 style="padding: 12px 0px 0px 50px;">Message</h4>
+  </ion-col>
+</ion-row>
+<div class="outer-div">
+  <ion-list *ngFor="let message of messages">
+    <ion-row>
+      <ion-col class="incoming-message" size="9" *ngIf="message?.sender === 'app-user'">
+        <h5>{{message?.name}}</h5>
+        <p>{{message?.message}}</p>
+        <p>{{message?.time | date:'short'}}</p>
+      </ion-col>
+
+      <ion-col class="out-going-message" offset="3" size="9" *ngIf="message?.sender !== 'app-user'">
+        <h5>{{message?.name}}</h5>
+        <p>{{message?.message}}</p>
+        <p>{{message?.time | date:'short'}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</div>
+<div class="outer-div">
+  <ion-row>
+    <ion-col size="11">
+      <textarea class="text" placeholder="Enter your message" [(ngModel)]="newMsg"></textarea>
+    </ion-col>
+    <ion-col size="1">
+      <img (click)="sendMessage()" class="send-icon" src="../assets/icons/send.png"/>
+    </ion-col>
+  </ion-row>
+</div>

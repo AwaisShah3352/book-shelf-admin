@@ -1,0 +1,87 @@
+.top-row {
+  margin: -16px -16px 0px -16px;
+  height: 70px;
+  background: darkslategrey;
+  color: white;
+}
+
+.icon {
+  height: 30px;
+  margin: 15px 0px 0px 15px;
+}
+
+.incoming-message {
+  background: cadetblue;
+  border-radius: 8px;
+  padding: 10px 0px 0px 20px;
+}
+
+.out-going-message {
+  background: aquamarine;
+  border-radius: 8px;
+  padding: 10px 0px 0px 20px;
+}
+
+.text {
+  width: 100%;
+  border: 3px solid lightblue;
+  border-radius: 5px;
+}
+
+.outer-div {
+  margin: 0px 20% 0px 20%;
+}
+
+.send-icon {
+  height: 35px;
+  margin: 15px 0px 0px 0px;
+}
+
+.message{
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  white-space: pre-wrap;
+}
+.other-message{
+  background: var(--ion-color-primary);
+  color: ghostwhite;
+}
+.my-message{
+  background: var(--ion-color-secondary);
+  color: white;
+}
+
+.time{
+  color: white;
+  float: right;
+}
+.message-input{
+
+  width: 100%;
+  resize: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 4px solid var(--ion-color-medium);
+  //-webkit-border-radius: 15px;
+  //-moz-border-radius: 15px;
+  outline: none;
+  border-radius: 15px;
+}
+
+::-webkit-input-placeholder {
+  padding-top: 10px;
+  text-align: center;
+}
+.msg-btn{
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+}
+
+.image {
+  width: 75px;
+  max-width: 75px;
+  max-height: 75px;
+  border-radius: 50%;
+  object-fit: none;
+}
