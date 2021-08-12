@@ -22,9 +22,9 @@
     <td class="center">{{user?.email}}</td>
     <td class="center">{{user?.phone}}</td>
     <td class="center">{{user.username}}</td>
-    <td *ngIf="user?.isActive === true" class="center">YES</td>
-    <td *ngIf="user?.isActive === false" class="center">NO</td>
-    <td class="center"><img style="width: 25px" src="../assets/icons/ellipsis-horizontal-sharp.svg"></td>
+    <td *ngIf="user?.isActive == true" class="center">YES</td>
+    <td *ngIf="user?.isActive == false" class="center">NO</td>
+    <td (click)="moreOptions(user)" class="center"><img style="width: 25px" src="../assets/icons/ellipsis-horizontal-sharp.svg"></td>
   </tr>
   </tbody>
 </table>

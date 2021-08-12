@@ -18,7 +18,7 @@
       <div>
         <img style="width: 35px" src="../assets/icons/people-sharp.svg">
       </div>
-      <h1>2 Users</h1>
+      <h1>{{dataCollector.users.length || ''}} Users</h1>
     </ion-card>
   </ion-col>
   <ion-col size="4">
@@ -26,7 +26,7 @@
       <div>
         <img style="width: 35px" src="../assets/icons/layers.svg">
       </div>
-      <h1>30 Books</h1>
+      <h1>{{dataCollector.books.length || ''}} Books</h1>
     </ion-card>
   </ion-col>
   <ion-col size="4">

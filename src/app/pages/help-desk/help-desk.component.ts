@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as firebase from 'firebase';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-help-desk',
@@ -9,22 +9,23 @@ import {Router} from "@angular/router";
 })
 export class HelpDeskComponent implements OnInit {
 
-  channels: any =[];
+  channels: any = [];
   user: any;
+
   constructor(public router: Router) {
   }
 
   ngOnInit(): void {
-    var isloggedIn = localStorage.getItem('isLoggedIn');
-    if(isloggedIn === 'true'){
+    const isloggedIn = localStorage.getItem('isLoggedIn');
+    if (isloggedIn === 'true') {
       this.loadAdminChatChannels();
-    } else if(isloggedIn === null) {
+    } else if (isloggedIn === null) {
       this.router.navigate(['']);
       alert('You are not logged in. Please login first...');
     }
   }
 
-  loadAdminChatChannels() {
+  loadAdminChatChannels(): void {
     firebase.database().ref(`admin-channels`).on('value', snapshot => {
       this.channels = [];
       snapshot.forEach((node) => {
@@ -36,7 +37,7 @@ export class HelpDeskComponent implements OnInit {
     });
   }
 
-  openChat(name) {
+  openChat(name): void {
     localStorage.setItem('selectedChannel', name);
     this.router.navigate(['/chat']);
   }

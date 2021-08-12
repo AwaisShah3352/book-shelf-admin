@@ -24,10 +24,11 @@ export class DataCollectorService {
     this.booksCollection = new BehaviorSubject<any>('data');
     this.reviewsCollection = new BehaviorSubject<any>('data');
     this.reportsCollection = new BehaviorSubject<any>('data');
+    this.getAllBooks();
   }
 
   getAllUsers(): any {
-    firebase.database().ref('users').once('value', snapshot => {
+    firebase.database().ref('users').on('value', snapshot => {
       this.users = [];
       snapshot.forEach((node) => {
         const user = node.val();
@@ -39,17 +40,10 @@ export class DataCollectorService {
 
   getAllBooks(): any {
     firebase.database().ref('books').once('value', snapshot => {
-      this.requiredBooks = [];
-      this.donatedBooks = [];
       this.books = [];
       snapshot.forEach((node) => {
         const book = node.val();
         this.books.push(book);
-        // if (book.purpose === 'Donation') {
-        //   this.donatedBooks.push(book);
-        // } else {
-        //   this.requiredBooks.push(book);
-        // }
       });
       this.setBooksValue('query completed');
     });
