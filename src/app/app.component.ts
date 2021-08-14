@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {UtilsService} from './services/utils.service';
 import {Router} from '@angular/router';
 import {AlertController} from '@ionic/angular';
+import {DataCollectorService} from './services/data-collector.service';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,20 @@ import {AlertController} from '@ionic/angular';
 export class AppComponent {
   title = 'qob';
   opened = true;
+  isloggedIn: any;
 
   constructor(
     public router: Router,
     public utils: UtilsService,
     public alertCtrl: AlertController,
-    // private dataCollecter: DataCollectorService
+    private dataCollecter: DataCollectorService
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => {
       return false;
     };
+    dataCollecter.getLoginValue().subscribe(() => {
+      this.isloggedIn = localStorage.getItem('isLoggedIn');
+    });
   }
 
   // toggleMenu(): any {
@@ -69,7 +74,8 @@ export class AppComponent {
           text: 'Ok',
           handler: () => {
             localStorage.clear();
-            this.router.navigate([''])
+            this.dataCollecter.setLoginValue('data');
+            this.router.navigate(['']);
           }
         }
       ]

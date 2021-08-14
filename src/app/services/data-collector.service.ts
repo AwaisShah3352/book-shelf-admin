@@ -14,12 +14,15 @@ export class DataCollectorService {
   donatedBooks: any = [];
   reviews: any = [];
   reports: any = [];
+
+  loginChecker: BehaviorSubject<any>;
   usersCollection: BehaviorSubject<any>;
   booksCollection: BehaviorSubject<any>;
   reviewsCollection: BehaviorSubject<any>;
   reportsCollection: BehaviorSubject<any>;
 
   constructor() {
+    this.loginChecker = new BehaviorSubject<any>('data');
     this.usersCollection = new BehaviorSubject<any>('data');
     this.booksCollection = new BehaviorSubject<any>('data');
     this.reviewsCollection = new BehaviorSubject<any>('data');
@@ -101,5 +104,13 @@ export class DataCollectorService {
 
   getValue(): Observable<boolean> {
     return this.usersCollection.asObservable();
+  }
+
+  setLoginValue(value): any {
+    return this.loginChecker.next(value);
+  }
+
+  getLoginValue(): Observable<boolean> {
+    return this.loginChecker.asObservable();
   }
 }

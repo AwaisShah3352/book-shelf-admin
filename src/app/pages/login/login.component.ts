@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilsService} from '../../services/utils.service';
 import * as firebase from 'firebase';
 import {Router} from "@angular/router";
+import {DataCollectorService} from '../../services/data-collector.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               public router: Router,
+              public dataCollector: DataCollectorService,
               private utils: UtilsService) {
   }
 
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
   async saveUser(uid) {
     localStorage.setItem('isLoggedIn', JSON.stringify(true));
     localStorage.setItem('uid', JSON.stringify(uid));
+    this.dataCollector.setLoginValue('some data');
     this.router.navigate(['/home']);
   }
 }
